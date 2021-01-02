@@ -1,1 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="tris.App">	<Application.Resources>		<!-- Application resource dictionary -->		<ResourceDictionary>			<Style x:Key="LblDisplay" TargetType="Label">				<Setter Property="FontFamily" Value="Enhanced Led Board-7" />				<Setter Property="LineBreakMode" Value="WordWrap" />				<Setter Property="TextColor" Value="Lime" />				<Setter Property="VerticalTextAlignment" Value="Center" />				<Setter Property="HorizontalTextAlignment" Value="Center" />			</Style>		</ResourceDictionary>	</Application.Resources></Application>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="tris.App">
+	<Application.Resources>
+		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+			<Style x:Key="LblDisplay" TargetType="Label">
+				<Setter Property="FontFamily" Value="Enhanced Led Board-7" />
+				<Setter Property="LineBreakMode" Value="WordWrap" />
+				<Setter Property="TextColor" Value="Lime" />
+				<Setter Property="VerticalTextAlignment" Value="Center" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+			</Style>
+			<Style x:Key="btnOk" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="Green" />
+				<Setter Property="BorderRadius" Value="7" />
+				<Setter Property="TextColor" Value="Silver" />
+			</Style>
+			<Style x:Key="entryPlayer" TargetType="Entry">
+				<Setter Property="PlaceholderColor" Value="Green" />
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

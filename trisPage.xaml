@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:tris" x:Class="tris.trisPage">
+	<ContentPage.BindingContext>
+		<local:trisPageViewModel />
+	</ContentPage.BindingContext>		
 	<Grid  RowSpacing="0"  Padding="2,20,2,2" BackgroundColor="White">
 		<!--Score Display -->
 		<Grid.RowDefinitions>
@@ -19,13 +22,13 @@
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
 			<!--Elements of first line on Display -->
-			<Label x:Name="lblTitleX" Text="Player X" Grid.Row="0" Grid.Column="0" Style="{StaticResource LblDisplay}" />
-			<Label x:Name="lblTie" Text="" Grid.Row="0" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
-			<Label x:Name="lblTitleO" Text="Player O" Grid.Row="0" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
+			<Label Text="Player X" Grid.Row="0" Grid.Column="0" Style="{StaticResource LblDisplay}" />
+			<Label Text="" Grid.Row="0" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
+			<Label Text="Player O" Grid.Row="0" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
 			<!--Elements of second line on Display -->
-			<Label x:Name="lblPlayerX" Text="Papà Nolasco" Grid.Row="1" Grid.Column="0" Style="{StaticResource LblDisplay}"/>
+			<Label x:Name="lblPlayerX" Text="{Binding DisplayNamePlayerX}" Grid.Row="1" Grid.Column="0" Style="{StaticResource LblDisplay}"/>
 			<Label x:Name="lblTieLine2" Text="Pareggio" Grid.Row="1" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
-			<Label x:Name="lblPlayerO" Text="Thaìs Nolasco" Grid.Row="1" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
+			<Label x:Name="lblPlayerO" Text="{Binding DisplayNamePlayerO}" Grid.Row="1" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
 			<!--Elements of thirth line on Display -->
 			<Label x:Name="lblScoreX" Text="1" Grid.Row="2" Grid.Column="0" Style="{StaticResource LblDisplay}"/>
 			<Label x:Name="lblScoreTie" Text="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
@@ -64,6 +67,11 @@
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
+			<!--Elements of button content of Tris-->
+			<Entry x:Name="entryPlayerX" Text="{Binding Name, Mode=TwoWay}" Placeholder="io mi chiamo X..." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource entryPlayer}"/>
+			<Button x:Name="btnPlayerX" Text="Fatto" Grid.Row="0" Grid.Column="2" Style="{StaticResource btnOk}" Clicked="BtnClickOk" />
+			<Entry x:Name="entryPlayerO" Text="{Binding NameO, Mode=TwoWay}" Placeholder="io sono O..." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  IsVisible="false" Style="{StaticResource entryPlayer}"/>
+			<Button x:Name="btnPlayerO" Text="Fatto" Grid.Row="0" Grid.Column="2" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnClickOkO" />
 		</Grid>
 	</Grid>
 </ContentPage>
