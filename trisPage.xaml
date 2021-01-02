@@ -1,1 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8"?><ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:tris" x:Class="tris.trisPage">	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" /></ContentPage>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:tris" x:Class="tris.trisPage">
+	<Grid  RowSpacing="0"  Padding="2,20,2,2" BackgroundColor="White">
+		<!--Score Display -->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.25*" />
+			<RowDefinition Height="0.65*" />
+			<RowDefinition Height="0.1*" />
+		</Grid.RowDefinitions>
+		<Grid BackgroundColor="Black" Grid.Row="0" Padding="5">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*" />
+				<RowDefinition Height="4*"/>
+				<RowDefinition Height="2*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<!--Elements of first line on Display -->
+			<Label x:Name="lblTitleX" Text="Player X" Grid.Row="0" Grid.Column="0" Style="{StaticResource LblDisplay}" />
+			<Label x:Name="lblTie" Text="" Grid.Row="0" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
+			<Label x:Name="lblTitleO" Text="Player O" Grid.Row="0" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
+			<!--Elements of second line on Display -->
+			<Label x:Name="lblPlayerX" Text="Papà Nolasco" Grid.Row="1" Grid.Column="0" Style="{StaticResource LblDisplay}"/>
+			<Label x:Name="lblTieLine2" Text="Pareggio" Grid.Row="1" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
+			<Label x:Name="lblPlayerO" Text="Thaìs Nolasco" Grid.Row="1" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
+			<!--Elements of thirth line on Display -->
+			<Label x:Name="lblScoreX" Text="1" Grid.Row="2" Grid.Column="0" Style="{StaticResource LblDisplay}"/>
+			<Label x:Name="lblScoreTie" Text="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
+			<Label x:Name="lblScoreO" Text="5" Grid.Row="2" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
+		</Grid>
+		<Grid BackgroundColor="#EFB97D" Grid.Row="1" RowSpacing="10" ColumnSpacing="10">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0.33*" />
+				<RowDefinition Height="0.33*" />
+				<RowDefinition Height="0.34*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.33*" />
+				<ColumnDefinition Width="0.33*" />
+				<ColumnDefinition Width="0.34*" />
+			</Grid.ColumnDefinitions>
+			<!--Elements of first line Grid of Tris-->
+			<Image Source="X_90@90_trsp.png" Grid.Row="0" Grid.Column="0"  BackgroundColor="Gray" />
+			<Image Source="O_90@90_trsp.png" Grid.Row="0" Grid.Column="1"  BackgroundColor="White"/>
+			<Image Source="X_90@90_trsp.png" Grid.Row="0" Grid.Column="2"  BackgroundColor="White"/>
+			<!--Elements of second line Grid of Tris-->
+			<Image Source="O_90@90_trsp.png" Grid.Row="1" Grid.Column="0"  BackgroundColor="White" />
+			<Image Source="X_90@90_trsp.png" Grid.Row="1" Grid.Column="1"  BackgroundColor="White"/>
+			<Image Source="O_90@90_trsp.png" Grid.Row="1" Grid.Column="2"  BackgroundColor="White"/>
+			<!--Elements of thirth line Grid of Tris-->
+			<Image Source="X_90@90_trsp.png" Grid.Row="2" Grid.Column="0"  BackgroundColor="White" />
+			<Image Source="O_90@90_trsp.png" Grid.Row="2" Grid.Column="1"  BackgroundColor="White"/>
+			<Image Source="X_90@90_trsp.png" Grid.Row="2" Grid.Column="2"  BackgroundColor="White"/>
+		</Grid>
+		<Grid BackgroundColor="White" Grid.Row="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+		</Grid>
+	</Grid>
+</ContentPage>
