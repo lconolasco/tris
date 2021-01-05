@@ -15,6 +15,11 @@
 				<Setter Property="BorderRadius" Value="7" />
 				<Setter Property="TextColor" Value="Silver" />
 			</Style>
+			<Style x:Key="btnGrid" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="BorderRadius" Value="0" />
+				<Setter Property="TextColor" Value="Silver" />
+			</Style>
 			<Style x:Key="entryPlayer" TargetType="Entry">
 				<Setter Property="PlaceholderColor" Value="Green" />
 			</Style>

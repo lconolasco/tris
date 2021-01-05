@@ -7,14 +7,14 @@
 		<!--Score Display -->
 		<Grid.RowDefinitions>
 			<RowDefinition Height="0.25*" />
-			<RowDefinition Height="0.65*" />
+			<RowDefinition Height="0.60*" />
 			<RowDefinition Height="0.1*" />
 		</Grid.RowDefinitions>
 		<Grid BackgroundColor="Black" Grid.Row="0" Padding="5">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="2*" />
 				<RowDefinition Height="4*"/>
-				<RowDefinition Height="2*" />
+				<RowDefinition Height="2*" /><RowDefinition Height="2*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
@@ -46,19 +46,19 @@
 				<ColumnDefinition Width="0.34*" />
 			</Grid.ColumnDefinitions>
 			<!--Elements of first line Grid of Tris-->
-			<Button x:Name="btn0" Text="" ClassId="0" Clicked="BtnClick" Grid.Row="0" Grid.Column="0"  BackgroundColor="White"/>
-			<Button x:Name="btn1" Text="" ClassId="1" Clicked="BtnClick" Grid.Row="0" Grid.Column="1"  BackgroundColor="White"/>
-			<Button x:Name="btn2" Text="" ClassId="2" Clicked="BtnClick" Grid.Row="0" Grid.Column="2"  BackgroundColor="White"/>
+			<Button x:Name="btn0" Text="" ClassId="0" Clicked="BtnClick" Grid.Row="0" Grid.Column="0"  Style="{StaticResource btnGrid}" />
+			<Button x:Name="btn1" Text="" ClassId="1" Clicked="BtnClick" Grid.Row="0" Grid.Column="1"  Style="{StaticResource btnGrid}" />
+			<Button x:Name="btn2" Text="" ClassId="2" Clicked="BtnClick" Grid.Row="0" Grid.Column="2"  Style="{StaticResource btnGrid}" />
 			<!--Elements of second line Grid of Tris-->
-			<Button x:Name="btn3" Text="" ClassId="3" Clicked="BtnClick" Grid.Row="1" Grid.Column="0"  BackgroundColor="White" />
-			<Button x:Name="btn4" Text="" ClassId="4" Clicked="BtnClick" Grid.Row="1" Grid.Column="1"  BackgroundColor="White"/>
-			<Button x:Name="btn5" Text="" ClassId="5" Clicked="BtnClick" Grid.Row="1" Grid.Column="2"  BackgroundColor="White"/>
+			<Button x:Name="btn3" Text="" ClassId="3" Clicked="BtnClick" Grid.Row="1" Grid.Column="0"  Style="{StaticResource btnGrid}" />
+			<Button x:Name="btn4" Text="" ClassId="4" Clicked="BtnClick" Grid.Row="1" Grid.Column="1"  Style="{StaticResource btnGrid}" />
+			<Button x:Name="btn5" Text="" ClassId="5" Clicked="BtnClick" Grid.Row="1" Grid.Column="2"  Style="{StaticResource btnGrid}" />
 			<!--Elements of thirth line Grid of Tris-->
-			<Button x:Name="btn6" Text="" ClassId="6" Clicked="BtnClick" Grid.Row="2" Grid.Column="0"  BackgroundColor="White" />
-			<Button x:Name="btn7" Text="" ClassId="7" Clicked="BtnClick" Grid.Row="2" Grid.Column="1"  BackgroundColor="White"/>
-			<Button x:Name="btn8" Text="" ClassId="8" Clicked="BtnClick" Grid.Row="2" Grid.Column="2"  BackgroundColor="White"/>
+			<Button x:Name="btn6" Text="" ClassId="6" Clicked="BtnClick" Grid.Row="2" Grid.Column="0"  Style="{StaticResource btnGrid}" />
+			<Button x:Name="btn7" Text="" ClassId="7" Clicked="BtnClick" Grid.Row="2" Grid.Column="1"  Style="{StaticResource btnGrid}" />
+			<Button x:Name="btn8" Text="" ClassId="8" Clicked="BtnClick" Grid.Row="2" Grid.Column="2"  Style="{StaticResource btnGrid}" />
 		</Grid>
-		<Grid BackgroundColor="White" Grid.Row="2">
+		<Grid BackgroundColor="White" Grid.Row="2" Padding="0, 10, 0, 2">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
@@ -72,7 +72,7 @@
 			<Button x:Name="btnPlayerX" Text="Fatto" Grid.Row="0" Grid.Column="2" Style="{StaticResource btnOk}" Clicked="BtnClickOk" />
 			<Entry x:Name="entryPlayerO" Text="{Binding NameO, Mode=TwoWay}" Placeholder="io sono O..." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  IsVisible="false" Style="{StaticResource entryPlayer}"/>
 			<Button x:Name="btnPlayerO" Text="Fatto" Grid.Row="0" Grid.Column="2" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnClickOkO" />
-			<Button x:Name="btnNewGame" Text="Ricomincia" Grid.Row="0" Grid.Column="1" IsVisible="false" Style="{StaticResource btnOk}" Clicked="Clear" />
+			<Button x:Name="btnNewGame" Text="Ricomincia" Grid.Row="0" Grid.Column="1" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnRestart" />
 		</Grid>
 	</Grid>
 </ContentPage>
