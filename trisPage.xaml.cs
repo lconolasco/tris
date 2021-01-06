@@ -5,7 +5,16 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
         int scoreX = 0, scoreO = 0, scoreTie = 0, spin = 9;
         bool turn = true;
         string[] arrPosition = new string[9];
-        public trisPage()        {            InitializeComponent();        }        public void BtnClickOk()        {            entryPlayerX.IsVisible = false;            btnPlayerX.IsVisible = false;            entryPlayerO.IsVisible = true;            btnPlayerO.IsVisible = true;        }        public void BtnClickOkO()        {            entryPlayerO.IsVisible = false;            btnPlayerO.IsVisible = false;            btnNewGame.IsVisible = true;        }        public void BtnRestart()
+        public trisPage()        {            InitializeComponent();        }
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            entryPlayerX.IsVisible = false;
+            btnPlayerX.IsVisible = false;
+
+            entryPlayerO.IsVisible = true;
+            btnPlayerO.IsVisible = true;
+        }
+        public void BtnClickOk(object sender, System.EventArgs e)        {            entryPlayerX.IsVisible = false;            btnPlayerX.IsVisible = false;            entryPlayerO.IsVisible = true;            btnPlayerO.IsVisible = true;        }        public void BtnClickOkO(object sender, System.EventArgs e)        {            entryPlayerO.IsVisible = false;            btnPlayerO.IsVisible = false;            btnNewGame.IsVisible = true;        }        public void BtnRestart(object sender, System.EventArgs e)
         {
             Clear();
         }
@@ -40,7 +49,7 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
 
         public async virtual void Win(string player)
         {
-            if (spin <= 5)
+            if (spin < 5)
             {
                 for (int horizontal = 0; horizontal < 8; horizontal += 3)
                     if (player == arrPosition[horizontal])
@@ -89,18 +98,17 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
 
                 }
 
-                if (spin <= 1)
-                {
-                    scoreTie += 1;
-                    lblScoreTie.Text = scoreTie.ToString();
-
-                    await DisplayAlert("PAREGGIO", "Siete Bravi!!!", "Riproviamo");
-                    Clear();
-                }
+            }
+            if (spin <= 1)
+            {
+                scoreTie += 1;
+                lblScoreTie.Text = scoreTie.ToString();
+                await DisplayAlert("PAREGGIO", "Siete Bravi!!!", "Riproviamo");
+                Clear();
             }
 
-        }
 
+        }
         public void Score(string player)
         {
             if (player == "X")

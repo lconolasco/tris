@@ -19,7 +19,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)trisPage.xaml.cs">
       <DependentUpon>trisPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Properties\AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\trisPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

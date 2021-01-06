@@ -12,14 +12,14 @@
 		</Grid.RowDefinitions>
 		<Grid BackgroundColor="Black" Grid.Row="0" Padding="5">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="2*" />
+				<RowDefinition Height="4*" />
 				<RowDefinition Height="4*"/>
-				<RowDefinition Height="2*" /><RowDefinition Height="2*" />
+				<RowDefinition Height="3*" /><RowDefinition Height="2*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="4*" />
+				<ColumnDefinition Width="4*" />
+				<ColumnDefinition Width="4*" />
 			</Grid.ColumnDefinitions>
 			<!--Elements of first line on Display -->
 			<Label Text="Player X" Grid.Row="0" Grid.Column="0" Style="{StaticResource LblDisplay}" />
@@ -58,7 +58,7 @@
 			<Button x:Name="btn7" Text="" ClassId="7" Clicked="BtnClick" Grid.Row="2" Grid.Column="1"  Style="{StaticResource btnGrid}" />
 			<Button x:Name="btn8" Text="" ClassId="8" Clicked="BtnClick" Grid.Row="2" Grid.Column="2"  Style="{StaticResource btnGrid}" />
 		</Grid>
-		<Grid BackgroundColor="White" Grid.Row="2" Padding="0, 10, 0, 2">
+		<Grid BackgroundColor="White" Grid.Row="2" Padding="0, 5, 0, 2">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
