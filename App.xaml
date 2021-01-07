@@ -3,8 +3,12 @@
 	<Application.Resources>
 		<!-- Application resource dictionary -->
 		<ResourceDictionary>
+				<OnPlatform x:TypeArguments="x:String" x:Key="FontName">
+					<OnPlatform.Android>enhanced_led_board-7.ttf#Enhanced LED Board-7</OnPlatform.Android>
+					<OnPlatform.iOS>Enhanced LED Board-7</OnPlatform.iOS>
+				</OnPlatform>
 			<Style x:Key="LblDisplay" TargetType="Label">
-				<Setter Property="FontFamily" Value="Enhanced Led Board-7" />
+				<Setter Property="FontFamily" Value="{StaticResource FontName}" />
 				<Setter Property="LineBreakMode" Value="WordWrap" />
 				<Setter Property="TextColor" Value="Lime" />
 				<Setter Property="VerticalTextAlignment" Value="Center" />
@@ -14,6 +18,8 @@
 				<Setter Property="BackgroundColor" Value="Green" />
 				<Setter Property="BorderRadius" Value="7" />
 				<Setter Property="TextColor" Value="Silver" />
+				<Setter Property="FontFamily" Value="{StaticResource FontName}" />
+				<Setter Property="FontSize" Value="16" />
 			</Style>
 			<Style x:Key="btnGrid" TargetType="Button">
 				<Setter Property="BackgroundColor" Value="White" />
@@ -22,6 +28,7 @@
 			</Style>
 			<Style x:Key="entryPlayer" TargetType="Entry">
 				<Setter Property="PlaceholderColor" Value="Green" />
+				<Setter Property="FontFamily" Value="{StaticResource FontName}" />
 			</Style>
 		</ResourceDictionary>
 	</Application.Resources>

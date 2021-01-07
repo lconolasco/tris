@@ -63,16 +63,16 @@
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="4*" />
+				<ColumnDefinition Width="4*" />
+				<ColumnDefinition Width="6*" />
 			</Grid.ColumnDefinitions>
 			<!--Elements of button content of Tris-->
 			<Entry x:Name="entryPlayerX" Text="{Binding Name, Mode=TwoWay}" Placeholder="io mi chiamo X..." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource entryPlayer}"/>
 			<Button x:Name="btnPlayerX" Text="Fatto" Grid.Row="0" Grid.Column="2" Style="{StaticResource btnOk}" Clicked="BtnClickOk" />
 			<Entry x:Name="entryPlayerO" Text="{Binding NameO, Mode=TwoWay}" Placeholder="io sono O..." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  IsVisible="false" Style="{StaticResource entryPlayer}"/>
 			<Button x:Name="btnPlayerO" Text="Fatto" Grid.Row="0" Grid.Column="2" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnClickOkO" />
-			<Button x:Name="btnNewGame" Text="Ricomincia" Grid.Row="0" Grid.Column="1" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnRestart" />
+			<Button x:Name="btnNewGame" Text="Ricomincia" Grid.Row="0" Grid.Column="2" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnRestart" />
 		</Grid>
 	</Grid>
 </ContentPage>
