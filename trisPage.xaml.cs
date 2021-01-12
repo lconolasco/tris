@@ -18,8 +18,30 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
         {
             Clear();
         }
-        public void BtnClick(object sender, EventArgs e)        {
-            Debug.WriteLine($"Value Initial spin: {spin}");            Button btn = (Button)sender;
+        public async void BtnClick(object sender, EventArgs e)        {
+            Debug.WriteLine($"Initial spin Value: {spin}");            Button btn = (Button)sender;
+            if (lblPlayerX.IsEnabled == true && lblPlayerX.Text == string.Empty && lblPlayerO.IsEnabled == true && lblPlayerO.Text == string.Empty )
+            {
+                var action = await DisplayActionSheet("Desidera proseguire senza impostare i nomi degli partecipanti?", "Sì", "No");
+                Debug.WriteLine("Action: " + action);
+                if (action == "Sì")
+                { 
+                    Debug.WriteLine("Azione scelta Sì!");
+                    lblPlayerX.IsEnabled=false;
+                    lblPlayerO.IsEnabled =false;
+                    entryPlayerX.IsVisible = false;
+                    entryPlayerO.IsVisible = false;
+                    btnPlayerX.IsVisible = false;
+                    btnPlayerO.IsVisible = false;
+                    btnNewGame.IsVisible = true;
+
+                }
+                else {
+                    Debug.WriteLine("Azione scelta No!");
+                    return;
+                }
+
+            }
             if (btn.Text == "" && spin > 0)
             {
                 if (turn)
@@ -30,7 +52,7 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
                     btn.IsEnabled = false;
                     turn = !turn;
                     Debug.WriteLine($"Call Button: {btn.ClassId}");
-                    Debug.WriteLine($"Value Actual turn: {turn}");
+                    Debug.WriteLine($"Current turn Value: {turn}");
                     Win(btn.Text);
                 }
                 else {
@@ -40,16 +62,16 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
                     btn.IsEnabled = false;
                     turn = !turn;
                     Debug.WriteLine($"Call Button: {btn.ClassId}");
-                    Debug.WriteLine($"Value Actual turn: {turn}");
+                    Debug.WriteLine($"Current turn Value: {turn}");
                     Win(btn.Text);
                 }
                 spin--;
-                Debug.WriteLine($"Value Actual spin: {spin}");
+                Debug.WriteLine($"Current spin Value: {spin}");
             }        }
 
         public async virtual void Win(string player)
         {
-            if (spin < 5)
+            if (spin <= 5)
             {
                 for (int horizontal = 0; horizontal < 8; horizontal += 3)
                     if (player == arrPosition[horizontal])
@@ -57,9 +79,30 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
                         if (arrPosition[horizontal] == arrPosition[horizontal + 1] && arrPosition[horizontal] == arrPosition[horizontal + 2])
                         {
                             Debug.WriteLine($"Player {player} ha vinto!");
+                            switch (horizontal)
+                            {
+                                case 0:
+                                    btn0.Image = "riga.png";
+                                    btn1.Image = "riga.png";
+                                    btn2.Image = "riga.png";
+                                    break;
+                                case 3:
+                                    btn3.Image = "riga.png";
+                                    btn4.Image = "riga.png";
+                                    btn5.Image = "riga.png";
+                                    break;
+                                case 6:
+                                    btn6.Image = "riga.png";
+                                    btn7.Image = "riga.png";
+                                    btn8.Image = "riga.png";
+                                    break;
+                                default:
+                                    break;
+                            }
+                            DisableBtnClick();
                             Score(player);
-                            Clear();
                             await Task.Delay(1250);
+                            Clear();
                             return;
                         }
                     }
@@ -70,9 +113,31 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
                         if (arrPosition[vertical] == arrPosition[vertical + 3] && arrPosition[vertical] == arrPosition[vertical + 6])
                         {
                             Debug.WriteLine($"Player {player} ha vinto!");
+                            switch (vertical)
+                            {
+                                case 0:
+                                    btn0.Image = "rigaVerticale.png";
+                                    btn3.Image = "rigaVerticale.png";
+                                    btn6.Image = "rigaVerticale.png";
+                                    break;
+                                case 1:
+                                    btn1.Image = "rigaVerticale.png";
+                                    btn4.Image = "rigaVerticale.png";
+                                    btn7.Image = "rigaVerticale.png";
+                                    break;
+                                case 3:
+                                    btn2.Image = "rigaVerticale.png";
+                                    btn5.Image = "rigaVerticale.png";
+                                    btn8.Image = "rigaVerticale.png";
+                                    break;
+                                default:
+                                    break;
+                            }
+                            DisableBtnClick();
                             Score(player);
+                            await Task.Delay(1250);
                             Clear();
-                            await Task.Delay(1250); return;
+                            return;
                         }
                     }
                 if (player == arrPosition[0])
@@ -80,9 +145,14 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
                     if (arrPosition[0] == arrPosition[4] && arrPosition[0] == arrPosition[8])
                     {
                         Debug.WriteLine($"Player {player} ha vinto!");
+                        btn0.Image = "rigaObliquaSinistra.png";
+                        btn4.Image = "rigaObliquaSinistra.png";
+                        btn8.Image = "rigaObliquaSinistra.png";
+                        DisableBtnClick();
                         Score(player);
+                        await Task.Delay(1250);
                         Clear();
-                        await Task.Delay(1250); return;
+                        return;
                     }
                 }
 
@@ -91,9 +161,14 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
                     if (arrPosition[2] == arrPosition[4] && arrPosition[2] == arrPosition[6])
                     {
                         Debug.WriteLine($"Player {player} ha vinto!");
+                        btn2.Image = "rigaObliquaDestra.png";
+                        btn4.Image = "rigaObliquaDestra.png";
+                        btn6.Image = "rigaObliquaDestra.png";
+                        DisableBtnClick();
                         Score(player);
+                        await Task.Delay(1250);
                         Clear();
-                        await Task.Delay(1250); return;
+                        return;
                     }
 
                 }
@@ -101,6 +176,7 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
             }
             if (spin <= 1)
             {
+                DisableBtnClick();
                 scoreTie += 1;
                 lblScoreTie.Text = scoreTie.ToString();
                 await DisplayAlert("PAREGGIO", "Siete Bravi!!!", "Riproviamo");
@@ -109,16 +185,19 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
 
 
         }
-        public void Score(string player)
+        public async void Score(string player)
         {
             if (player == "X")
             {
                 if (lblPlayerX.Text != string.Empty)
                 {
-                    DisplayAlert("VITTORIA", $"Punto per {lblPlayerX.Text}", "Ok");
+                    await Task.Delay(1250);
+                    await DisplayAlert("VITTORIA", $"Punto per {lblPlayerX.Text}", "Ok");
                 }
                 else {
-                    DisplayAlert("VITTORIA", $"Punto per Player {player}", "Ok");
+
+                    await Task.Delay(1250);
+                    await DisplayAlert("VITTORIA", $"Punto per Player {player}", "Ok");
                 }
                 scoreX += 1;
                 lblScoreX.Text = scoreX.ToString();
@@ -127,10 +206,12 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
             {
                 if (lblPlayerO.Text != string.Empty)
                 {
-                    DisplayAlert("VITTORIA", $"Punto per {lblPlayerO.Text}", "Ok");
+                    await Task.Delay(1250);
+                    await DisplayAlert("VITTORIA", $"Punto per {lblPlayerO.Text}", "Ok");
                 }
                 else {
-                    DisplayAlert("VITTORIA", $"Punto per Player {player}", "Ok");
+                    await Task.Delay(1250);
+                    await DisplayAlert("VITTORIA", $"Punto per Player {player}", "Ok");
                 }
                 scoreO += 1;
                 lblScoreO.Text = scoreO.ToString();
@@ -156,6 +237,12 @@ using Xamarin.Forms;namespace tris{    public partial class trisPage : Conte
             btn6.IsEnabled = true; btn7.IsEnabled = true; btn8.IsEnabled = true;
 
             spin = 9;
+        }
+
+        public void DisableBtnClick() {
+            btn0.IsEnabled = false; btn1.IsEnabled = false; btn2.IsEnabled = false;
+            btn3.IsEnabled = false; btn4.IsEnabled = false; btn5.IsEnabled = false;
+            btn6.IsEnabled = false; btn7.IsEnabled = false; btn8.IsEnabled = false;
         }
     }
 }

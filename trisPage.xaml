@@ -27,16 +27,17 @@
 			<Label Text="Player O" Grid.Row="0" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
 			<!--Elements of second line on Display -->
 			<Label x:Name="lblPlayerX" Text="{Binding DisplayNamePlayerX}" Grid.Row="1" Grid.Column="0" Style="{StaticResource LblDisplay}"/>
-			<Label x:Name="lblTieLine2" Text="Pareggio" Grid.Row="1" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
+			<Label Text="Pareggio" Grid.Row="1" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
 			<Label x:Name="lblPlayerO" Text="{Binding DisplayNamePlayerO}" Grid.Row="1" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
 			<!--Elements of thirth line on Display -->
 			<Label x:Name="lblScoreX" Text="--" Grid.Row="2" Grid.Column="0" Style="{StaticResource LblDisplay}"/>
 			<Label x:Name="lblScoreTie" Text="--" Grid.Row="2" Grid.Column="1" Style="{StaticResource LblDisplay}"/>
 			<Label x:Name="lblScoreO" Text="--" Grid.Row="2" Grid.Column="2" Style="{StaticResource LblDisplay}"/>
 		</Grid>
-		<Grid BackgroundColor="#EFB97D" Grid.Row="1" RowSpacing="10" ColumnSpacing="10">
+		<Grid BackgroundColor = "White" Grid.Row="1" Padding="0,5,0,0">
+		<Grid BackgroundColor="#EFB97D"  RowSpacing="10" ColumnSpacing="10">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="0.33*" />
+				<RowDefinition Height="0.33*"/>
 				<RowDefinition Height="0.33*" />
 				<RowDefinition Height="0.34*" />
 			</Grid.RowDefinitions>
@@ -46,6 +47,7 @@
 				<ColumnDefinition Width="0.34*" />
 			</Grid.ColumnDefinitions>
 			<!--Elements of first line Grid of Tris-->
+			<!--<Button x:Name="btn0" Text="" ClassId="0" Command="{Binding ClickOkCommand}" CommandParameter="0" Grid.Row="0" Grid.Column="0"  Style="{StaticResource btnGrid}" />-->
 			<Button x:Name="btn0" Text="" ClassId="0" Clicked="BtnClick" Grid.Row="0" Grid.Column="0"  Style="{StaticResource btnGrid}" />
 			<Button x:Name="btn1" Text="" ClassId="1" Clicked="BtnClick" Grid.Row="0" Grid.Column="1"  Style="{StaticResource btnGrid}" />
 			<Button x:Name="btn2" Text="" ClassId="2" Clicked="BtnClick" Grid.Row="0" Grid.Column="2"  Style="{StaticResource btnGrid}" />
@@ -58,9 +60,10 @@
 			<Button x:Name="btn7" Text="" ClassId="7" Clicked="BtnClick" Grid.Row="2" Grid.Column="1"  Style="{StaticResource btnGrid}" />
 			<Button x:Name="btn8" Text="" ClassId="8" Clicked="BtnClick" Grid.Row="2" Grid.Column="2"  Style="{StaticResource btnGrid}" />
 		</Grid>
+			</Grid>
 		<Grid BackgroundColor="White" Grid.Row="2" Padding="0, 5, 0, 2">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="4*" />
@@ -69,10 +72,10 @@
 			</Grid.ColumnDefinitions>
 			<!--Elements of button content of Tris-->
 			<Entry x:Name="entryPlayerX" Text="{Binding Name, Mode=TwoWay}" Placeholder="io mi chiamo X..." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource entryPlayer}"/>
-			<Button x:Name="btnPlayerX" Text="Fatto" Grid.Row="0" Grid.Column="2" Style="{StaticResource btnOk}" Clicked="BtnClickOk" />
+			<Button x:Name="btnPlayerX" Text="Fatto" Grid.Row="0" Grid.Column="2" Style="{StaticResource btnOk}" Clicked="BtnClickOk"/>
 			<Entry x:Name="entryPlayerO" Text="{Binding NameO, Mode=TwoWay}" Placeholder="io sono O..." Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  IsVisible="false" Style="{StaticResource entryPlayer}"/>
 			<Button x:Name="btnPlayerO" Text="Fatto" Grid.Row="0" Grid.Column="2" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnClickOkO" />
-			<Button x:Name="btnNewGame" Text="Ricomincia" Grid.Row="0" Grid.Column="2" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnRestart" />
+			<Button x:Name="btnNewGame" Text="Ricomincia" Grid.Row="0" Grid.Column="2" IsVisible="false" Style="{StaticResource btnOk}" Clicked="BtnRestart" TranslationX="-95"/>
 		</Grid>
 	</Grid>
 </ContentPage>

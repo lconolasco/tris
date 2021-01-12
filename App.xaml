@@ -19,7 +19,7 @@
 				<Setter Property="BorderRadius" Value="7" />
 				<Setter Property="TextColor" Value="Silver" />
 				<Setter Property="FontFamily" Value="{StaticResource FontName}" />
-				<Setter Property="FontSize" Value="16" />
+
 			</Style>
 			<Style x:Key="btnGrid" TargetType="Button">
 				<Setter Property="BackgroundColor" Value="White" />
