@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tris.App">
+    <Application.Resources>
+		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+				<OnPlatform x:TypeArguments="x:String" x:Key="FontName">
+					<OnPlatform.Android>enhanced_led_board-7.ttf#Enhanced LED Board-7</OnPlatform.Android>
+					<OnPlatform.iOS>Enhanced LED Board-7</OnPlatform.iOS>
+				</OnPlatform>
+			<Style x:Key="LblDisplay" TargetType="Label">
+				<Setter Property="FontFamily" Value="{StaticResource FontName}" />
+				<Setter Property="LineBreakMode" Value="WordWrap" />
+				<Setter Property="TextColor" Value="Lime" />
+				<Setter Property="VerticalTextAlignment" Value="Center" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+			</Style>
+			<Style x:Key="btnOk" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="Green" />
+				<Setter Property="BorderRadius" Value="7" />
+				<Setter Property="TextColor" Value="Silver" />
+
+			</Style>
+			<Style x:Key="btnGrid" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="BorderRadius" Value="0" />
+				<Setter Property="TextColor" Value="White" />
+			</Style>
+			<Style x:Key="entryPlayer" TargetType="Entry">
+				<Setter Property="PlaceholderColor" Value="Green" />
+				<Setter Property="BackgroundColor" Value="Silver" />
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

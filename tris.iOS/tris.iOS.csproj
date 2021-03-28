@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63978AA2-7F04-4C10-9D3B-4C9B73CCA7BD}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>tris.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>tris.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ProvisioningType>automatic</ProvisioningType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>Apple Development: Luiz Carlos de Oliveira Nolasco (588J5UD937)</CodesignKey>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <CodesignKey>Apple Development: Luiz Carlos de Oliveira Nolasco (588J5UD937)</CodesignKey>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignKey>Apple Development: Luiz Carlos de Oliveira Nolasco (588J5UD937)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignKey>Apple Development: Luiz Carlos de Oliveira Nolasco (588J5UD937)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-180-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-48.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-55.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-87-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-88.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-172.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-196.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-216.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-32-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-64.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-256-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-512-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.6.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\tris\tris.csproj">
+      <Project>{9935C0B8-C6EE-4A0D-98E8-E0FA225C0D93}</Project>
+      <Name>tris</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Launch320%40480black.png" />
+    <BundleResource Include="Resources\Launch640%40960black.png" />
+    <BundleResource Include="Resources\Launch640%401136black.png" />
+    <BundleResource Include="Resources\Launch750%401334Black.png" />
+    <BundleResource Include="Resources\Launch768%401004Black.png" />
+    <BundleResource Include="Resources\Launch768%401024Black.png" />
+    <BundleResource Include="Resources\Launch1024%40748Black.png" />
+    <BundleResource Include="Resources\Launch1024%40768Black.png" />
+    <BundleResource Include="Resources\Launch1080%401920Black.png" />
+    <BundleResource Include="Resources\Launch1242%402208Black.png" />
+    <BundleResource Include="Resources\Launch1334%40750Black.png" />
+    <BundleResource Include="Resources\Launch1536%402008Black.png" />
+    <BundleResource Include="Resources\Launch1536%402048Black.png" />
+    <BundleResource Include="Resources\Launch1920%401080Black.png" />
+    <BundleResource Include="Resources\Launch2048%401496Black.png" />
+    <BundleResource Include="Resources\Launch2048%401536Black.png" />
+    <BundleResource Include="Resources\Launch2208%401242Black.png" />
+    <BundleResource Include="Resources\enhanced_led_board-7.ttf" />
+    <BundleResource Include="Resources\Icon-16.png" />
+    <BundleResource Include="Resources\Icon-20.png" />
+    <BundleResource Include="Resources\Icon-29.png" />
+    <BundleResource Include="Resources\Icon-32.png" />
+    <BundleResource Include="Resources\Icon-40.png" />
+    <BundleResource Include="Resources\Icon-48.png" />
+    <BundleResource Include="Resources\Icon-50.png" />
+    <BundleResource Include="Resources\Icon-55.png" />
+    <BundleResource Include="Resources\Icon-57.png" />
+    <BundleResource Include="Resources\Icon-58.png" />
+    <BundleResource Include="Resources\Icon-60.png" />
+    <BundleResource Include="Resources\Icon-64.png" />
+    <BundleResource Include="Resources\Icon-72.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-80.png" />
+    <BundleResource Include="Resources\Icon-87.png" />
+    <BundleResource Include="Resources\Icon-88.png" />
+    <BundleResource Include="Resources\Icon-100.png" />
+    <BundleResource Include="Resources\Icon-114.png" />
+    <BundleResource Include="Resources\Icon-120.png" />
+    <BundleResource Include="Resources\Icon-128.png" />
+    <BundleResource Include="Resources\Icon-144.png" />
+    <BundleResource Include="Resources\Icon-152.png" />
+    <BundleResource Include="Resources\Icon-167.png" />
+    <BundleResource Include="Resources\Icon-172.png" />
+    <BundleResource Include="Resources\Icon-180.png" />
+    <BundleResource Include="Resources\Icon-196.png" />
+    <BundleResource Include="Resources\Icon-216.png" />
+    <BundleResource Include="Resources\Icon-256.png" />
+    <BundleResource Include="Resources\Icon-512.png" />
+    <BundleResource Include="Resources\Icon-1024.png" />
+    <BundleResource Include="Resources\O.png" />
+    <BundleResource Include="Resources\X.png" />
+    <BundleResource Include="Resources\rigaObliquaDestra.png" />
+    <BundleResource Include="Resources\rigaObliquaSinistra.png" />
+    <BundleResource Include="Resources\rigaVerticale.png" />
+    <BundleResource Include="Resources\riga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\en.lproj\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+</Project>
